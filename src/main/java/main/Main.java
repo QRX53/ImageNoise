@@ -47,11 +47,9 @@ public class Main {
 
         System.out.print("Enter MIDI instrument number (0 - 15): ");
         SoundPlayer.inst = new Scanner(System.in).nextInt();
-        System.out.println();
 
         System.out.print("Enter RunType (1 for simultaneous noise, 2 for iterating through each pixel (recommended)): ");
         int which = new Scanner(System.in).nextInt();
-        System.out.println();
 
         if (which == 1) {
             rt = RunType.Simultaneous;
@@ -63,6 +61,8 @@ public class Main {
         }
 
         // src/main/resources/Slackline-VDN-081523-2-622x1024.jpg
+        // src/main/resources/mhwns1hz9nb21.png
+        // src/main/resources/free-nature-images.jpg
         try {
             new SoundPlayer(pixels).runf(RunType.Iterate);
         } catch (Exception e) {
