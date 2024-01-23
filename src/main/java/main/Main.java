@@ -46,7 +46,12 @@ public class Main {
         }
 
         System.out.print("Enter MIDI instrument number (0 - 15): ");
-        SoundPlayer.inst = new Scanner(System.in).nextInt();
+        try {
+            SoundPlayer.inst = new Scanner(System.in).nextInt();
+        } catch (Exception e) {
+            System.err.println(e.getLocalizedMessage());
+            SoundPlayer.inst = 0;
+        }
 
         System.out.print("Enter RunType (1 for simultaneous noise, 2 for iterating through each pixel (recommended)): ");
         int which = new Scanner(System.in).nextInt();
